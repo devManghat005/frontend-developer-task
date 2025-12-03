@@ -1,0 +1,17 @@
+# Node
+node_modules
+npm-debug.log
+yarn.lock
+
+# Environment variables
+.env
+
+# Build output
+dist
+build
+
+# Mac junk
+.DS_Store
+
+# Vite
+.vite
