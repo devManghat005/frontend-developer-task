@@ -4,9 +4,10 @@ import User from "../models/User.js";
 
 const router = express.Router();
 
-// @route GET /api/users/me
 router.get("/me", protect, async (req, res) => {
+  // Returns the current authenticated user
   const user = req.user;
+
   res.json({
     id: user._id,
     name: user.name,
@@ -15,11 +16,11 @@ router.get("/me", protect, async (req, res) => {
   });
 });
 
-// @route PUT /api/users/me
 router.put("/me", protect, async (req, res) => {
   const user = req.user;
   const { name, bio } = req.body;
 
+  // Updates allowed profile fields
   if (name !== undefined) user.name = name;
   if (bio !== undefined) user.bio = bio;
 

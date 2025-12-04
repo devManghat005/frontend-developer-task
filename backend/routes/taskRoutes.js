@@ -9,8 +9,8 @@ import {
 
 const router = express.Router();
 
-// @route GET /api/tasks?search=&status=&priority=
 router.get("/", protect, async (req, res) => {
+  // Builds the task query based on filters
   const { search, status, priority } = req.query;
 
   const query = { user: req.user._id };
@@ -28,7 +28,6 @@ router.get("/", protect, async (req, res) => {
   res.json(tasks);
 });
 
-// @route POST /api/tasks
 router.post("/", protect, taskCreateValidation, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -48,10 +47,10 @@ router.post("/", protect, taskCreateValidation, async (req, res) => {
   res.status(201).json(task);
 });
 
-// @route PUT /api/tasks/:id
 router.put("/:id", protect, taskUpdateValidation, async (req, res) => {
   const { id } = req.params;
 
+  // Finds the task that belongs to the current user
   const task = await Task.findOne({ _id: id, user: req.user._id });
   if (!task) {
     return res.status(404).json({ message: "Task not found" });
@@ -68,10 +67,10 @@ router.put("/:id", protect, taskUpdateValidation, async (req, res) => {
   res.json(task);
 });
 
-// @route DELETE /api/tasks/:id
 router.delete("/:id", protect, async (req, res) => {
   const { id } = req.params;
 
+  // Deletes the task if it belongs to the user
   const task = await Task.findOne({ _id: id, user: req.user._id });
   if (!task) {
     return res.status(404).json({ message: "Task not found" });

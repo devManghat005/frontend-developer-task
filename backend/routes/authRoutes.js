@@ -8,12 +8,12 @@ import { registerValidation, loginValidation } from "../validators/authValidator
 const router = express.Router();
 
 const generateToken = (id) => {
+  // Creates a signed token for the user
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN || "1d"
   });
 };
 
-// @route POST /api/auth/register
 router.post("/register", registerValidation, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -47,12 +47,12 @@ router.post("/register", registerValidation, async (req, res) => {
       }
     });
   } catch (err) {
+    // Handles server errors during registration
     console.error(err);
     return res.status(500).json({ message: "Server error" });
   }
 });
 
-// @route POST /api/auth/login
 router.post("/login", loginValidation, async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -82,6 +82,7 @@ router.post("/login", loginValidation, async (req, res) => {
       }
     });
   } catch (err) {
+    // Handles server errors during login
     console.error(err);
     return res.status(500).json({ message: "Server error" });
   }

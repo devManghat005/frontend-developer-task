@@ -16,14 +16,19 @@ export const protect = async (req, res, next) => {
   }
 
   try {
+    // Verifies the token and extracts the user id
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+    // Attaches the authenticated user to the request
     req.user = await User.findById(decoded.id).select("-password");
+
     if (!req.user) {
       return res.status(401).json({ message: "User not found" });
     }
+
     next();
   } catch (err) {
-    console.error(err);
+    setImmediate(() => console.error(err));
     return res.status(401).json({ message: "Not authorized, token failed" });
   }
 };
