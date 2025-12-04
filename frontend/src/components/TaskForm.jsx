@@ -46,7 +46,7 @@ const TaskForm = ({ onSubmit, editingTask }) => {
             name="title"
             value={task.title}
             onChange={handleChange}
-            placeholder="e.g. Finish frontend assignment"
+            placeholder=""
             className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-3 py-2 text-sm text-gray-100 shadow-inner outline-none ring-1 ring-transparent transition hover:border-blue-500/50 focus:border-blue-500 focus:ring-blue-500"
           />
         </div>
@@ -88,7 +88,7 @@ const TaskForm = ({ onSubmit, editingTask }) => {
           name="description"
           value={task.description}
           onChange={handleChange}
-          placeholder="Optional details, acceptance criteria, links…"
+          placeholder="Optional"
           rows={2}
           className="w-full rounded-xl border border-white/10 bg-slate-900/70 px-3 py-2 text-sm text-gray-100 shadow-inner outline-none ring-1 ring-transparent transition hover:border-blue-500/50 focus:border-blue-500 focus:ring-blue-500"
         />

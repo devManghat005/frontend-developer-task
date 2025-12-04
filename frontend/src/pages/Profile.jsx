@@ -43,7 +43,7 @@ const Profile = () => {
       <div>
         <h1 className="text-2xl font-semibold text-white">Profile</h1>
         <p className="mt-1 text-xs text-gray-400">
-          Your basic information and a short bio.
+
         </p>
       </div>
 
@@ -100,8 +100,6 @@ const Profile = () => {
             <p className="text-[11px] text-gray-400">{user?.email}</p>
           </div>
           <p className="max-w-xs text-[11px] text-gray-400">
-            This profile is local to the app and stored securely via hashed auth and
-            JWT with your data in MongoDB.
           </p>
         </div>
       </div>

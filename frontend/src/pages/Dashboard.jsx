@@ -60,7 +60,7 @@ const Dashboard = () => {
         <div>
           <h1 className="text-2xl font-semibold text-white">Dashboard</h1>
           <p className="mt-1 text-xs text-gray-400">
-            Manage your tasks with a clean, secure dashboard.
+            Manage your tasks.
           </p>
         </div>
         {editingTask && (

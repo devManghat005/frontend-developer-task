@@ -29,7 +29,6 @@ const Navbar = () => {
                 Task Dashboard
               </span>
               <span className="text-[11px] text-gray-400">
-                Clean, secure and modern
               </span>
             </div>
           </Link>

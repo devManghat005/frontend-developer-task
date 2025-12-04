@@ -1,0 +1,14 @@
+Log Timestamp: 2025-12-03
+
+(base) dev@Devs-MacBook-Pro-3 backend % npm run dev
+
+> frontend-task-backend@1.0.0 dev
+> nodemon server.js
+
+[nodemon] 3.1.11
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching path(s): *.*
+[nodemon] watching extensions: js,mjs,cjs,json
+[nodemon] starting `node server.js`
+Server running on port 5001
+MongoDB Connected: localhost

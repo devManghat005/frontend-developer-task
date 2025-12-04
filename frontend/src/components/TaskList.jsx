@@ -19,7 +19,7 @@ const TaskList = ({ tasks, onEdit, onDelete }) => {
     return (
       <div className="mt-6 flex flex-col items-center gap-2 text-sm text-gray-400">
         <div className="h-10 w-10 rounded-full border border-dashed border-gray-600/80" />
-        <p>No tasks yet. Start by adding your first one ✏️</p>
+        <p>No tasks yet</p>
       </div>
     );
   }
